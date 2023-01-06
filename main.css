@@ -1,3 +1,16 @@
+#main {
+
+    text-align: center;
+}
+#marketplace{
+    text-align: center;
+
+}
+hr.rounded{
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+}
+
 .inventory {
     position: fixed;
     bottom: 0;
@@ -16,7 +29,6 @@
     margin-bottom: 10px;
 }
 
-}
 .upgrades {
     display: grid;
     grid-template-columns: repeat(1, 96px);
@@ -61,8 +73,22 @@ h1 {
     grid-template-columns: repeat(1, 96px);
     margin-bottom: 10px;
 }
-body{
+
+body {
     background-color: #BABAF6;
 }
 
+button {
+    text-align: center;
+    display: block;
+    margin: auto;
+    background-color: red;
+    color: black;
+    padding: 32px 16px;
 
+}
+
+button:hover {
+    background-color: #f44336;
+    color: white;
+}
