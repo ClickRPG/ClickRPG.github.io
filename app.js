@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    //new line
+    // new line
     var logs = 0;
     var money = 10000;
     var logPlus = 1;
