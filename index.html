@@ -2,8 +2,13 @@
 <html>
 
 <head>
+    
     <title>ClickRPG</title>
     <link rel="stylesheet" href="main.css">
+    <h1> ClickRPG</h1>
+    <h2>
+        <p id="money">Money: $0</p>
+    </h2>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="app.js"></script>
 </head>
@@ -12,8 +17,15 @@
     <div class="content">
         <div class="menus">
             <div class="main">
+                <ul>
+                    <li><a id="visit">Visit Market</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
                 <button id="chop">Chop Log</button>
-                <button id="visit">Visit Marketplace</button>
+                <p id="logs">You now own 0 logs</p>
+
             </div>
 
             <div class="marketplace">
@@ -29,11 +41,10 @@
             </div>
         </div>
 
-        
+
 
         <div class="inventory">
-            <p id="money">Money: $0</p>
-            <p id="logs">You now own 0 logs</p>
+
 
         </div>
     </div>

@@ -1,4 +1,4 @@
-.inventory{
+.inventory {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -8,18 +8,61 @@
     display: none;
 }
 
-.sellButtons{
+.sellButtons {
+    justify-content: center;
+    text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 72px);
     margin-bottom: 10px;
 }
 
-.upgrades{
+}
+.upgrades {
     display: grid;
     grid-template-columns: repeat(1, 96px);
     margin-bottom: 10px;
 }
-button{
-    background-color: white;
-    font-size: 18px;
+
+ul {
+    text-align: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
+
+li {
+    display: inline-block;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+p {
+    text-align: center;
+    grid-template-columns: repeat(3, 72px);
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    grid-template-columns: repeat(1, 96px);
+    margin-bottom: 10px;
+}
+body{
+    background-color: #BABAF6;
+}
+
+

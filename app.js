@@ -65,9 +65,9 @@ $(document).ready(function () {
         $("#money").html("Money: $" + money);
 
         if (logs == 1) {
-            $("#logs").html("You now own " + logs.toFixed(1) + " log.")
+            $("#logs").html("You now own " + parseInt(logs) + " log.")
         } else {
-            $("#logs").html("You now own " + logs.toFixed(1) + " logs.")
+            $("#logs").html("You now own " + parseInt(logs) + " logs.")
         }
     }
 
