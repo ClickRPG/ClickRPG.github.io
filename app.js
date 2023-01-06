@@ -12,6 +12,7 @@ $(document).ready(function () {
         changeMarket();
     }, 1000 / 60);
 
+
     $("#chop").click(function () {
         logs += logPlus;
         changeInventory();
