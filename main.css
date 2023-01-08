@@ -7,20 +7,28 @@
     background-color: burlywood;
 }
 
-hr.rounded {
-    border-top: 8px solid #bbb;
-    border-radius: 5px;
+#home{
+    text-align: right;
 }
-
 #lumberProgress {
-    width: 100%;
+
+    float: right;
+    width: 50%;
     background-color: grey;
 }
 
 #lumberProgressBar {
-    width: 1%;
-    height: 30px;
-    background-color: green;
+    width: 0%;
+    height: 50px;
+    background-color: burlywood;
+}
+
+#woodcuttingLevel{
+    color: white;
+}
+hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
 }
 
 .inventory {
@@ -76,7 +84,6 @@ li a:hover {
 
 p {
     text-align: center;
-    grid-template-columns: repeat(1, 96px);
 }
 
 h1 {

@@ -3,7 +3,8 @@ $(document).ready(function () {
     // new line
     var logs = 0;
     var logTotal = 0;
-    var skillCap = 1000;
+    var woodCuttingLevel = 1;
+    var woodToLevelUp = 1000;
     var money = 1000000;
     var logPlus = 1;
     var autoLogPlus = 0;
@@ -13,6 +14,7 @@ $(document).ready(function () {
     var logsPerClick = 0;
     var menu;
     var isVisable = false;
+    var multiplier = 10;
     setInterval(function () {
         logs += autoLogPlus;
         logTotal += autoLogPlus;
@@ -58,7 +60,7 @@ $(document).ready(function () {
         changeMarket();
     });
 
-    $("#home").click(function () {
+    $("#homeBar").click(function () {
         menu = switchMenu("main")
     });
     $("#visit").click(function () {
@@ -69,19 +71,16 @@ $(document).ready(function () {
     $("#return").click(function () {
 
     });
-    var i = 0;
+
     function move() {
-        if (i == 0) {
-            i = 1;
-            var elem = document.getElementById("lumberProgressBar");
-            var width = logTotal;
-            var id = setInterval(frame, 10);
-            function frame() {
-                if (width >= skillCap) {
-                    width++;
-                    elem.style.width = width + "%";
-                }
-            }
+        var elem = document.getElementById("lumberProgressBar");
+        width = logTotal;
+        elem.style.width = width / multiplier + "%";
+        if (logTotal >= woodToLevelUp){
+            woodCuttingLevel++;
+            elem.style.width = 0;
+            woodToLevelUp *= 2;
+            multiplier *= 2;
         }
     }
     function changeInventory() {
@@ -90,6 +89,7 @@ $(document).ready(function () {
         $("#logsPerSec").html("LPS: " + parseInt(logsPerSec));
         $("#logsPerClick").html("LPC: " + parseInt(logsPerClick));
         $("#totalLogs").html("Total Logs: " + parseInt(logTotal));
+        $("#woodcuttingLevel").html("Woodcutting Lvl: " + parseInt(woodCuttingLevel));
 
         if (logs == 1) {
             $("#logs").html("You own " + parseInt(logs) + " log.")
