@@ -3,6 +3,7 @@ $(document).ready(function () {
     // new line
     var logs = 0;
     var logTotal = 0;
+    var skillCap = 1000;
     var money = 1000000;
     var logPlus = 1;
     var autoLogPlus = 0;
@@ -17,7 +18,7 @@ $(document).ready(function () {
         logTotal += autoLogPlus;
         changeInventory();
         changeMarket();
-        logTotal();
+        move();
     }, 100);
 
 
@@ -66,41 +67,35 @@ $(document).ready(function () {
     });
 
     $("#return").click(function () {
-        
-    });
 
+    });
     var i = 0;
-    $("#move").click(function() {
-      if (i == 0) {
-        i = 1;
-        
-        var elem = document.getElementById("lumberProgressBar");
-        var width = 1;
-        var id = setInterval(frame, 10);
-        function frame() {
-          if (width >= 100) {
-            clearInterval(id);
-            i = 0;
-          } else {
-            width++;
-            elem.style.width = width + "%";
-          }
+    function move() {
+        if (i == 0) {
+            i = 1;
+            var elem = document.getElementById("lumberProgressBar");
+            var width = logTotal;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= skillCap) {
+                    width++;
+                    elem.style.width = width + "%";
+                }
+            }
         }
-      }
-    });
-
+    }
     function changeInventory() {
 
-        logTotal = logs + logsPerSec;
-        $("#money").html("Money: $" +  parseInt(money));
-        $("#logsPerSec").html("LPS: " +  parseInt(logsPerSec));
-        $("#logsPerClick").html("LPC: " +  parseInt(logsPerClick));
+        $("#money").html("Money: $" + parseInt(money));
+        $("#logsPerSec").html("LPS: " + parseInt(logsPerSec));
+        $("#logsPerClick").html("LPC: " + parseInt(logsPerClick));
+        $("#totalLogs").html("Total Logs: " + parseInt(logTotal));
 
         if (logs == 1) {
-            $("#logs").html("You own " + parseInt(logTotal) + " log.")
+            $("#logs").html("You own " + parseInt(logs) + " log.")
             $("#logsInShop").html("You own " + parseInt(logs) + " log.")
         } else {
-            $("#logs").html("You own " +  parseInt(logTotal) + " logs.")
+            $("#logs").html("You own " + parseInt(logs) + " logs.")
             $("#logsInShop").html("You own " + parseInt(logs) + " logs.")
         }
     }
@@ -128,10 +123,10 @@ $(document).ready(function () {
         } else {
             $("#autoChopper").css("display", "none");
         }
-        if (money < autoChopperPrice){
+        if (money < autoChopperPrice) {
             document.getElementById("autoChopper").disabled = true;
             document.getElementById('autoChopper').style.backgroundColor = 'Red';
-        }else{
+        } else {
             document.getElementById("autoChopper").disabled = false;
             document.getElementById('autoChopper').style.backgroundColor = 'Green';
         }
