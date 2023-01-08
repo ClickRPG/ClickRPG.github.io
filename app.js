@@ -2,12 +2,14 @@ $(document).ready(function () {
     //new line
     // new line
     var logs = 0;
-    var money = 10000;
+    var money = 0;
     var logPlus = 1;
     var autoLogPlus = 0;
     var autoChopperPrice = 100;
     var logPrice = 1;
+    var logsPerSec = 0;
     var menu;
+    var isVisable = false;
     setInterval(function () {
         logs += autoLogPlus;
         changeInventory();
@@ -49,49 +51,62 @@ $(document).ready(function () {
         changeMarket();
     });
 
+    $("#home").click(function () {
+        menu = switchMenu("main")
+    });
     $("#visit").click(function () {
         menu = switchMenu("marketplace");
         changeMarket();
     });
 
     $("#return").click(function () {
-        menu = switchMenu("main")
+        
     });
 
 
     function changeInventory() {
 
-        
-        $("#money").html("Money: $" + money);
+
+        $("#money").html("Money: $" +  parseInt(money));
 
         if (logs == 1) {
-            $("#logs").html("You now own " + parseInt(logs) + " log.")
+            $("#logs").html("You own " + parseInt(logs) + " log.")
+            $("#logsInShop").html("You own " + parseInt(logs) + " log.")
         } else {
-            $("#logs").html("You now own " + parseInt(logs) + " logs.")
+            $("#logs").html("You own " +  parseInt(logs) + " logs.")
+            $("#logsInShop").html("You own " + parseInt(logs) + " logs.")
         }
     }
 
     function changeMarket() {
         if (logs > 0) {
-            $("#sellAll").css("display", "block")
+            document.getElementById("sellAll").disabled = false;
         } else {
-            $("#sellAll").css("display", "none")
+            document.getElementById("sellAll").disabled = true;
         }
         if (logs >= 1) {
-            $("#sell1").css("display", "block")
+            document.getElementById("sell1").disabled = false;
         } else {
-            $("#sell1").css("display", "none")
+            document.getElementById("sell1").disabled = true;
         }
         if (logs >= 10) {
-            $("#sell10").css("display", "block")
+            document.getElementById("sell10").disabled = false;
         } else {
-            $("#sell10").css("display", "none")
+            document.getElementById("sell10").disabled = true;
         }
 
-        if (money >= autoChopperPrice) {
+        if (money >= autoChopperPrice || (isVisable === true)) {
             $("#autoChopper").css("display", "block");
+            isVisable = true;
         } else {
             $("#autoChopper").css("display", "none");
+        }
+        if (money < autoChopperPrice){
+            document.getElementById("autoChopper").disabled = true;
+            document.getElementById('autoChopper').style.backgroundColor = 'Red';
+        }else{
+            document.getElementById("autoChopper").disabled = false;
+            document.getElementById('autoChopper').style.backgroundColor = 'Green';
         }
     }
 
@@ -100,4 +115,5 @@ $(document).ready(function () {
         $("." + menu).css("display", "block");
         return menu;
     }
+
 });

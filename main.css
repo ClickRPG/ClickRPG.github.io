@@ -1,12 +1,15 @@
-#main {
-
-    text-align: center;
-}
-#marketplace{
+#marketplace {
     text-align: center;
 
 }
-hr.rounded{
+
+
+
+#chop:hover{
+    background-color: burlywood;
+}
+
+hr.rounded {
     border-top: 8px solid #bbb;
     border-radius: 5px;
 }
@@ -22,6 +25,7 @@ hr.rounded{
 }
 
 .sellButtons {
+    display: block;
     justify-content: center;
     text-align: center;
     display: grid;
@@ -30,9 +34,8 @@ hr.rounded{
 }
 
 .upgrades {
-    display: grid;
-    grid-template-columns: repeat(1, 96px);
-    margin-bottom: 10px;
+    display: block;
+    margin: auto;
 }
 
 ul {
@@ -64,8 +67,7 @@ li a:hover {
 
 p {
     text-align: center;
-    grid-template-columns: repeat(3, 72px);
-    margin-bottom: 10px;
+    grid-template-columns: repeat(1, 96px);
 }
 
 h1 {
@@ -82,13 +84,11 @@ button {
     text-align: center;
     display: block;
     margin: auto;
-    background-color: red;
     color: black;
     padding: 32px 16px;
+    box-shadow: 0 5px #666;
 
 }
-
-button:hover {
-    background-color: #f44336;
-    color: white;
-}
+ button:active{
+    transform: translateY(4px);
+ }

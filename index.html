@@ -2,14 +2,19 @@
 <html>
 
 <head>
-    
+
     <title>ClickRPG</title>
     <link rel="stylesheet" href="main.css">
     <h1> ClickRPG</h1>
     <hr class="rounded">
-    <h2>
-        <p id="money">Money: $0</p>
-    </h2>
+    <h2><p id="money">Money: $0</p></h2>
+
+    <ul>
+        <li><a id="home">Home</a></li>
+        <li><a id="visit">Shop</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="app.js"></script>
 </head>
@@ -18,20 +23,21 @@
     <div class="content">
         <div class="menus">
             <div class="main">
-                <ul>
-                    <li><a id="visit">Visit Market</a></li>
-                    <li><a href="#news">News</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about">About</a></li>
-                </ul>
-                <br/>
-                <hr class="rounded">
-                <button id="chop">Chop Log</button>
-                <p id="logs">You now own 0 logs</p>
-                <hr class="rounded">
+                <div class="home">
+
+                    <br />
+                    <hr class="rounded">
+                    <button id="chop">Chop Log</button>
+                    <h3><p id="logs">You own 0 logs</p></h3>
+                    <h3><p id="logsPerSec">LPS: </p></h3>
+                    <h3><p id="logsPerClick">LPC: </p></h3>
+                    <hr class="rounded">
+                </div>
             </div>
 
             <div class="marketplace">
+                <hr class="rounded"/>
+                <h2><p id="logsInShop">You own 0 logs</p></h2>
                 <div class="sellButtons">
                     <button id="sell1">Sell [1] Logs</button>
                     <button id="sell10">Sell [10] Logs</button>
@@ -40,7 +46,6 @@
                 <div class="upgrades">
                     <button id="autoChopper">Buy [1] Auto Chopper ($100)</button>
                 </div>
-                <button id="return">Return</button>
             </div>
         </div>
 
