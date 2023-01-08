@@ -3,15 +3,24 @@
 
 }
 
-
-
-#chop:hover{
+#chop:hover {
     background-color: burlywood;
 }
 
 hr.rounded {
     border-top: 8px solid #bbb;
     border-radius: 5px;
+}
+
+#lumberProgress {
+    width: 100%;
+    background-color: grey;
+}
+
+#lumberProgressBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
 }
 
 .inventory {
@@ -89,6 +98,7 @@ button {
     box-shadow: 0 5px #666;
 
 }
- button:active{
+
+button:active {
     transform: translateY(4px);
- }
+}

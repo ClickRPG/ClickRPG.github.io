@@ -2,30 +2,36 @@ $(document).ready(function () {
     //new line
     // new line
     var logs = 0;
-    var money = 0;
+    var logTotal = 0;
+    var money = 1000000;
     var logPlus = 1;
     var autoLogPlus = 0;
     var autoChopperPrice = 100;
     var logPrice = 1;
     var logsPerSec = 0;
+    var logsPerClick = 0;
     var menu;
     var isVisable = false;
     setInterval(function () {
         logs += autoLogPlus;
+        logTotal += autoLogPlus;
         changeInventory();
         changeMarket();
-    }, 1000 / 60);
+        logTotal();
+    }, 100);
 
 
     $("#chop").click(function () {
         logs += logPlus;
+        logTotal += logPlus;
         changeInventory();
         changeMarket();
     });
 
     $("#autoChopper").click(function () {
         money -= autoChopperPrice;
-        autoLogPlus += 0.01;
+        autoLogPlus += 0.1;
+        logsPerSec++
         changeInventory();
         changeMarket();
     });
@@ -63,17 +69,38 @@ $(document).ready(function () {
         
     });
 
+    var i = 0;
+    $("#move").click(function() {
+      if (i == 0) {
+        i = 1;
+        
+        var elem = document.getElementById("lumberProgressBar");
+        var width = 1;
+        var id = setInterval(frame, 10);
+        function frame() {
+          if (width >= 100) {
+            clearInterval(id);
+            i = 0;
+          } else {
+            width++;
+            elem.style.width = width + "%";
+          }
+        }
+      }
+    });
 
     function changeInventory() {
 
-
+        logTotal = logs + logsPerSec;
         $("#money").html("Money: $" +  parseInt(money));
+        $("#logsPerSec").html("LPS: " +  parseInt(logsPerSec));
+        $("#logsPerClick").html("LPC: " +  parseInt(logsPerClick));
 
         if (logs == 1) {
-            $("#logs").html("You own " + parseInt(logs) + " log.")
+            $("#logs").html("You own " + parseInt(logTotal) + " log.")
             $("#logsInShop").html("You own " + parseInt(logs) + " log.")
         } else {
-            $("#logs").html("You own " +  parseInt(logs) + " logs.")
+            $("#logs").html("You own " +  parseInt(logTotal) + " logs.")
             $("#logsInShop").html("You own " + parseInt(logs) + " logs.")
         }
     }
@@ -115,5 +142,4 @@ $(document).ready(function () {
         $("." + menu).css("display", "block");
         return menu;
     }
-
 });
