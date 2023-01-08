@@ -78,7 +78,6 @@ $(document).ready(function () {
         elem.style.width = width / multiplier + "%";
         if (logTotal >= woodToLevelUp){
             woodCuttingLevel++;
-            elem.style.width = 0;
             woodToLevelUp *= 2;
             multiplier *= 2;
         }
