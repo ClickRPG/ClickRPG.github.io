@@ -5,7 +5,7 @@ $(document).ready(function () {
     var logTotal = 0;
     var woodCuttingLevel = 1;
     var woodToLevelUp = 1000;
-    var money = 1000000;
+    var money = 0;
     var logPlus = 1;
     var autoLogPlus = 0;
     var autoChopperPrice = 100;
@@ -22,7 +22,6 @@ $(document).ready(function () {
         changeMarket();
         move();
     }, 100);
-
 
     $("#chop").click(function () {
         logs += logPlus;
@@ -67,9 +66,9 @@ $(document).ready(function () {
         menu = switchMenu("marketplace");
         changeMarket();
     });
-
-    $("#return").click(function () {
-
+    $("#stats").click(function () {
+        menu = switchMenu("stats");
+        changeMarket();
     });
 
     function move() {

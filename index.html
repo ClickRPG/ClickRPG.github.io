@@ -2,16 +2,17 @@
 <html>
 
 <head>
-
     <title>ClickRPG</title>
     <link rel="stylesheet" href="main.css">
     <h1> ClickRPG</h1>
     <hr class="rounded">
-    <h2><p id="money">Money: $0</p></h2>
-
+    <h2>
+        <p id="money">Money: $0</p>
+    </h2>
     <ul>
         <li><a id="homeBar">Home</a></li>
         <li><a id="visit">Shop</a></li>
+        <li><a id="stats">Stats</a></li>
     </ul>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="app.js"></script>
@@ -28,16 +29,23 @@
                         <div id="lumberProgressBar"></div>
                     </div>
                     <button id="chop">Chop Log</button>
-                    <h3><p id="logs">You own 0 logs</p></h3>
-                    <h3><p id="logsPerSec">LPS: </p></h3>
-                    <h3><p id="logsPerClick">LPC: </p></h3>
-                    <h3><p id="totalLogs">Total Logs: </p></h3>
+                    <h3>
+                        <p id="logs">You own 0 logs</p>
+                    </h3>
+                    <h3>
+                        <p id="logsPerSec">LPS: </p>
+                    </h3>
+                    <h3>
+                        <p id="logsPerClick">LPC: </p>
+                    </h3>
                     <hr class="rounded">
                 </div>
             </div>
             <div class="marketplace">
-                <hr class="rounded"/>
-                <h2><p id="logsInShop">You own 0 logs</p></h2>
+                <hr class="rounded" />
+                <h2>
+                    <p id="logsInShop">You own 0 logs</p>
+                </h2>
                 <div class="sellButtons">
                     <button id="sell1">Sell [1] Logs</button>
                     <button id="sell10">Sell [10] Logs</button>
@@ -46,10 +54,16 @@
                 <div class="upgrades">
                     <button id="autoChopper">Buy [1] Auto Chopper ($100)</button>
                 </div>
+
+            </div>
+            <div class="stats">
+                <hr class="rounded">
+                <h1 id="totalLogs">Total Logs: </h1>
             </div>
         </div>
-        <div class="inventory">
-        </div>
+    </div>
+    <div class="inventory">
+    </div>
     </div>
 </body>
 
