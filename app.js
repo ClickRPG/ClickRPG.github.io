@@ -3,6 +3,8 @@ $(document).ready(function () {
     // new line
     var logs = 0;
     var logTotal = 0;
+    var moneyTotal = 0;
+    var clickTotal = 0;
     var woodCuttingLevel = 1;
     var woodToLevelUp = 1000;
     var money = 0;
@@ -24,6 +26,7 @@ $(document).ready(function () {
     }, 100);
 
     $("#chop").click(function () {
+        clickTotal++
         logs += logPlus;
         logTotal += logPlus;
         changeInventory();
@@ -41,6 +44,7 @@ $(document).ready(function () {
     $("#sell1").click(function () {
         logs--;
         money += logPrice;
+        moneyTotal += logPrice;
         changeInventory();
         changeMarket();
     });
@@ -48,12 +52,14 @@ $(document).ready(function () {
     $("#sell10").click(function () {
         logs -= 10;
         money += logPrice * 10;
+        moneyTotal += logPrice * 10;
         changeInventory();
         changeMarket();
     });
 
     $("#sellAll").click(function () {
         money += logPrice * logs;
+        moneyTotal += logPrice * logs;
         logs = 0;
         changeInventory();
         changeMarket();
@@ -66,7 +72,7 @@ $(document).ready(function () {
         menu = switchMenu("marketplace");
         changeMarket();
     });
-    $("#stats").click(function () {
+    $("#statBar").click(function () {
         menu = switchMenu("stats");
         changeMarket();
     });
@@ -86,8 +92,11 @@ $(document).ready(function () {
         $("#money").html("Money: $" + parseInt(money));
         $("#logsPerSec").html("LPS: " + parseInt(logsPerSec));
         $("#logsPerClick").html("LPC: " + parseInt(logsPerClick));
+        $("#totalClicks").html("Total Clicks: " + parseInt(clickTotal));
         $("#totalLogs").html("Total Logs: " + parseInt(logTotal));
+        $("#totalMoney").html("Total Money: " + parseInt(moneyTotal));
         $("#woodcuttingLevel").html("Woodcutting Lvl: " + parseInt(woodCuttingLevel));
+        
 
         if (logs == 1) {
             $("#logs").html("You own " + parseInt(logs) + " log.")
