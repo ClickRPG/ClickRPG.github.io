@@ -8,6 +8,7 @@
     <hr class="rounded">
     <h2>
         <p id="money">Money: $0</p>
+        <p id="moneyPersec">MPS: </p>
     </h2>
     <ul>
         <li><a id="homeBar">Home</a></li>
@@ -39,6 +40,23 @@
                         <p id="logsPerClick">LPC: </p>
                     </h3>
                     <hr class="rounded">
+
+                    <hr class="rounded">
+                    <div id="stoneProgress">
+                        <p id="stonecuttingLevel">Stonecutting Lvl: </p>
+                        <div id="stoneProgressBar"></div>
+                    </div>
+                    <button id="mine">Mine Stone</button>
+                    <h3>
+                        <p id="stone">You own 0 stone</p>
+                    </h3>
+                    <h3>
+                        <p id="stonePerSec">SPS: </p>
+                    </h3>
+                    <h3>
+                        <p id="stonePerClick">SPC: </p>
+                    </h3>
+                    <hr class="rounded">
                 </div>
             </div>
             <div class="marketplace">
@@ -46,21 +64,42 @@
                 <h2>
                     <p id="logsInShop">You own 0 logs</p>
                 </h2>
+
                 <div class="sellButtons">
-                    <button id="sell1">Sell [1] Logs</button>
-                    <button id="sell10">Sell [10] Logs</button>
-                    <button id="sellAll">Sell All Logs</button>
+                    <button id="sell1L">Sell [1] Logs</button>
+                    <button id="sell10L">Sell [10] Logs</button>
+                    <button id="sellAllL">Sell All Logs</button>
                 </div>
+
                 <div class="upgrades">
                     <button id="autoChopper">Buy [1] Auto Chopper ($100)</button>
+                    <button id="autoWoodSeller">Buy [1] Wood Seller ($100)</button>
                 </div>
+
+                <hr class="rounded">
+
+                <h2>
+                    <p id="stoneInShop">You own 0 stone</p>
+                </h2>
+                <div class="sellButtons">
+                    <button id="sell1S">Sell [1] Stone</button>
+                    <button id="sell10S">Sell [10] Stone</button>
+                    <button id="sellAllS">Sell All Stone</button>
+                </div>
+
+                <div class="upgrades">
+                    <button id="autoMiner">Buy [1] Auto Miner ($100)</button>
+                </div>
+
+                <hr class="rounded">
 
             </div>
             <div class="stats">
                 <hr class="rounded">
                 <h1 id="totalClicks">Total Clicks: </h1>
                 <h1 id="totalLogs">Total Logs: </h1>
-                <h1 id="totalMoney">Total Money: </h1>   
+                <h1 id="totalStone">Total Stone: </h1>
+                <h1 id="totalMoney">Total Money: </h1>
             </div>
         </div>
     </div>

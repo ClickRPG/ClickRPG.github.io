@@ -11,6 +11,10 @@
     background-color: burlywood;
 }
 
+#mine:hover{
+    background-color: slategray;
+}
+
 #home {
     text-align: right;
 }
@@ -18,7 +22,7 @@
 #lumberProgress {
     float: right;
     width: 50%;
-    background-color: grey;
+    background-color: rgb(211,211,211, 0.5);
 }
 
 #lumberProgressBar {
@@ -27,8 +31,16 @@
     background-color: burlywood;
 }
 
-#woodcuttingLevel {
-    color: white;
+#stoneProgress {
+    float: right;
+    width: 50%;
+    background-color: rgb(211,211,211, 0.5);;
+}
+
+#stoneProgressBar {
+    width: 0%;
+    height: 50px;
+    background-color: slategray;
 }
 
 hr.rounded {
@@ -57,7 +69,10 @@ hr.rounded {
 
 .upgrades {
     display: block;
-    margin: auto;
+    justify-content: center;
+    text-align: center;
+    display: grid;
+
 }
 
 ul {
