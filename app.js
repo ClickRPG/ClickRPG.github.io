@@ -83,7 +83,6 @@ $(document).ready(function () {
         money -= autoWoodSellerPrice;
         autoMoneyPlus += 0.1;
         autoLogPlus -= 0.1;
-        logsPerSec --;
         moneyPerSec++
         autoWoodSellerCount++
         changeInventory();
@@ -174,7 +173,7 @@ $(document).ready(function () {
 
     function woodSeller(){
         if (logs <= 0){
-            autoMoneyPlus
+            autoMoneyPlus = logsPerSec * .1;
         }
     }
 
@@ -288,5 +287,5 @@ $(document).ready(function () {
         return menu;
 
     }
-
+      
 });
