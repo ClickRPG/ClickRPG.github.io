@@ -1,5 +1,38 @@
-.button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+.btn:active{
+  transform: translateY(4px);
+}
+#chop{
+  background-color: #966F33;
+}
+#mine{
+  background-color: #918E85;
+}
+#lumberProgress {
+  width: 50%;
+  background-color: rgba(128, 128, 128, 0);
+  float: right;
+}
+
+#lumberProgressBar {
+  width: 1%;
+  height: 30px;
+  background-color: #966F33;
+}
+
+#stoneProgress {
+  width: 50%;
+  background-color: rgba(128, 128, 128, 0);
+  float: right;
+}
+
+#stoneProgressBar {
+  width: 1%;
+  height: 30px;
+  background-color: #918E85;
+}
+.marketplace{
+  display: none;
+}
+.stats{
+  display: none;
+}

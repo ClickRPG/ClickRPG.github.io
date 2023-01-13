@@ -12,7 +12,7 @@ $(document).ready(function () {
     var stoneCuttingLevel = 1;
     var woodToLevelUp = 1000;
     var stoneToLevelUp = 1000;
-    var money = 100000;
+    var money = 0;
     var logPlus = 1;
     var stonePlus = 1;
     var autoLogPlus = 0;
@@ -44,7 +44,6 @@ $(document).ready(function () {
         changeMarket();
         moveWood();
         moveStone();
-        woodSeller();
     }, 100);
 
     $("#chop").click(function () {
@@ -171,11 +170,6 @@ $(document).ready(function () {
         }
     }
 
-    function woodSeller(){
-        if (logs <= 0){
-            autoMoneyPlus = logsPerSec * .1;
-        }
-    }
 
     function changeInventory() {
 
@@ -228,6 +222,14 @@ $(document).ready(function () {
         } else {
             $("#autoChopper").css("display", "none");
         }
+
+        if (money >= autoWoodSellerPrice || (isWoodVisable === true)) {
+            $("#autoWoodSeller").css("display", "block");
+            isWoodVisable = true;
+        } else {
+            $("#autoWoodSeller").css("display", "none");
+        }
+
         if (money < autoChopperPrice) {
             document.getElementById("autoChopper").disabled = true;
             document.getElementById('autoChopper').style.backgroundColor = 'Red';
@@ -272,6 +274,8 @@ $(document).ready(function () {
         } else {
             $("#autoMiner").css("display", "none");
         }
+
+        
         if (money >= autoWoodSellerPrice && logsPerSec <= 0) {
             document.getElementById("autoWoodSeller").disabled = true;
             document.getElementById('autoWoodSeller').style.backgroundColor = 'Red';
